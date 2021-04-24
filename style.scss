@@ -1,0 +1,187 @@
+@mixin heading($bg-color) {
+  padding: 50px 0;
+  text-align: center;
+  background-color: $bg-color;
+}
+
+@mixin headingContent {
+  padding: 30px;
+  span{
+    padding-bottom: 20px;
+    border-bottom:  3px solid rgb(136, 135, 135);
+  }
+}
+
+@mixin btn {
+  display: block;
+  width: 150px;
+  text-align: center;
+  font-size: 16px;
+  margin: 0 auto;
+  padding: 10px 0;
+  border-radius: 5px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.7);
+  text-decoration: none;
+}
+
+body{
+  font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", メイリオ, Meiryo, "ＭＳ Ｐゴシック", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  header{
+    width: 100%;
+    padding: 10px 10%;
+    position: fixed;
+    top: 0;
+    display: flex;
+    align-items: center;
+    background-color: grey;
+    h1{
+      font-weight: normal;
+      font-size: 24px;
+      a{
+        color: white;
+        text-decoration: none;
+      }
+    }
+    nav{
+      margin: 0 0 0 auto;
+      ul{
+        display: flex;
+        li{
+          color: white;
+          list-style: none;
+          padding: 0 10px;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+  
+  main{
+    width: 100%;
+    .main-visual{
+      background-image: url(../img/scott-graham-5fNmWej4tAA-unsplash.jpg);
+      background-size: cover;
+      height: 400px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      h2{
+        color: white;
+      }
+    }
+    .about{
+      @include heading(#d1d1d1);
+      h2{
+        @include headingContent();
+      }
+      .about-text{
+        padding: 30px 0;
+        p{
+          line-height: 2em;
+        }
+      }
+    }
+    .news{
+      @include heading(#fff);
+
+      h2{
+        @include headingContent();
+      }
+      .news-list{
+        margin: 0 10%;
+        ul{
+          padding: 50px 0;
+          li{
+            display: flex;
+            border-bottom: 2px solid #d1d1d15b;
+            .news-date{
+              padding-right: 20px;
+            }
+          }
+        }
+      .news-btn{
+        @include btn();
+        border: 1px solid #4a4a4a;
+        color: #4a4a4a;
+        background-color: #e2e4e4;
+        }
+      }
+    }
+    .works{
+      @include heading(#d1d1d1);
+      h2{
+        @include headingContent();
+      }
+      .works-list{
+        margin: 30px 10%;
+        .works-row{
+          display: flex;
+          margin-bottom: 20px;
+          .work-item{
+            width: 30%;
+            border: 1px solid #4a4a4a;
+            border-radius: 5px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.7);
+            img{
+              width: 100%
+            }
+            h3{
+              padding: 10px 0;
+              font-weight: normal;
+            }
+          }
+          .work-item:nth-child(2){
+            margin: 0 5%
+          }
+        }
+      }
+    }
+    .access{
+      @include heading(#fff);
+      h2{
+        @include headingContent();
+      }
+      .ggmap{
+        margin: 50px 10%;
+        height: 400px;
+      }
+    }
+    .contact{
+      @include heading(#d1d1d1);
+      h2{
+        @include headingContent();
+      }
+      .contact-form{
+        margin: 30px auto;
+        text-align: center;
+        input{
+          background-color: white;
+          border: 2px solid #a7a7a7;
+          width: 50%;
+          margin-bottom: 20px;
+        }
+        textarea{
+          background-color:white; 
+          border: 2px solid #a7a7a7;
+          width: 50%;
+          margin-bottom: 20px;
+        }
+      }
+      .form-btn{
+        @include btn();
+        background-color: rgb(71, 189, 236);
+        color: white;
+      }
+    }
+  }
+  footer{
+    background-color: rgb(1, 1, 22);
+    color: white;
+    text-align: center;
+    p{
+      padding: 20px 0;
+    }
+  }
+}
